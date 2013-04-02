@@ -3,9 +3,6 @@ $yellow-highlight: #ffc559;
 	background-color: $yellow-highlight;
 	@include vendor-prefix(transition, background-color 0.5s);
 }
-@mixin width-animation {
-	@include vendor-prefix(transition, width 0.5s);
-}
 @mixin vendor-prefix($name, $argument) {
   #{$name}: #{$argument};
   -webkit-#{$name}: #{$argument};
@@ -121,12 +118,7 @@ $yellow-highlight: #ffc559;
 	font-weight: bold;
 	line-height: 1;
 }
-.resume-header-contact-section-info {
-	width: 0;
-	@include width-animation;
-	overflow: hidden;
-	margin-left: 5px;
-}
+
 #resume-experience-section, #resume-education-section, #resume-more-section {
 	margin-top:50px;
 	position: relative;
@@ -143,15 +135,35 @@ $yellow-highlight: #ffc559;
 .resume-header-contact-section-icon {
 	margin-top: 3px;
 }
+.resume-header-contact-section-icon-link {
+	display: block;
+	position: absolute;
+	top:8px;
+	left:5px;
+	height: 14px;
+	width: 14px;
+	z-index: 1;
+}
+.resume-header-contact-section-info {
+	position: absolute;
+	bottom:-23px;
+	left:0;
+	padding:0;
+	width: 0;
+	overflow: hidden;
+}
 .resume-header-contact-section {
-	margin-top:5px;
-	margin-left: 5px;
+	margin-top:13px;
+	margin-left: 10px;
 	padding:5px;
 	cursor: pointer;
+	position: relative;
 	&:hover {
 		.resume-header-contact-section-info {
 			width: 170px;
-			@include width-animation;
+			padding: 2px 5px;
+			background-color: $yellow-highlight;
+			@include vendor-prefix(transition, "width 0.5s, background-color 0.5s");
 		}
 	}
 }
