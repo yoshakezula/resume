@@ -22,14 +22,14 @@ $yellow-highlight: #ffc559;
 }
 .resume-experience-header-row {
 	position: relative;
+	height: 25px;
 }
 .resume-experience-header {
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 35px;
 	position: absolute;
-	left: -145px;
-	text-align: right;
-	width: 150px;
+	left: 0;
+	color: #ccc;
 }
 .resume-experience-row {
 	margin-bottom:30px;
@@ -56,7 +56,7 @@ $yellow-highlight: #ffc559;
 	background: url('../img/logo-sprites.png') no-repeat;
 	display: block;
 }
-.logo-link {
+.resume-experience-company-logo-link {
 	z-index: 1;
 	position: absolute;
 	top:0;
@@ -126,16 +126,16 @@ $yellow-highlight: #ffc559;
 .resume-experience-timeline {
 	position: absolute;
 	height: 100%;
-	left:75px;
-	top:0;
-	border-left: 1px solid #999;
+	left:70px;
+	top:25px;
+	border-left: 1px solid #aaa;
 	border-right: 1px solid #eee;
 	z-index: 1;
 }
 .resume-header-contact-section-icon {
 	margin-top: 3px;
 }
-.resume-header-contact-section-icon-link {
+.no-touch .resume-header-contact-section-icon-link {
 	display: block;
 	position: absolute;
 	top:8px;

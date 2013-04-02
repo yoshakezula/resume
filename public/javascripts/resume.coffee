@@ -36,7 +36,7 @@ $.fn.offScreen = (distance) ->
 #from http://codepen.io/PawelGIX/pen/kmhLl
 $ ->
 	win = $(window)
-	allRows = $ '.resume-experience-row'
+	allRows = $ '.resume-experience-row, .resume-experience-header-row'
 
 	allRows.each (i, el) ->
 		el = $(el)
