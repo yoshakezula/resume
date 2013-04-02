@@ -33,7 +33,6 @@ $yellow-highlight: #ffc559;
 .resume-experience-company-logo-wrapper {
 	position: relative;
 	height: 50px;
-	min-width: 400px;
 	margin-bottom: 5px;
 }
 .resume-experience-company-name {
@@ -46,7 +45,14 @@ $yellow-highlight: #ffc559;
 	background: url('../img/logo-sprites.png') no-repeat;
 	display: block;
 }
-
+.logo-link {
+	z-index: 1;
+	position: absolute;
+	top:0;
+	left: 0;
+	display: block;
+	height: 50px;
+}
 .logo-arkad {
 	width: 186px;
 	background-position: -5px -5px;
