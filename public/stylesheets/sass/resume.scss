@@ -7,11 +7,18 @@ $yellow-highlight: #ffc559;
 	@include vendor-prefix(transition, width 0.5s);
 }
 @mixin vendor-prefix($name, $argument) {
-  #{$name}: $argument;
+  #{$name}: #{$argument};
   -webkit-#{$name}: #{$argument};
   -ms-#{$name}: #{$argument};
   -moz-#{$name}: #{$argument};
   -o-#{$name}: #{$argument};
+}
+@mixin vendor-prefix-prefix($name, $argument) {
+  #{$name}: #{$argument};
+  -webkit-#{$name}: -webkit-#{$argument};
+  -ms-#{$name}: -ms-#{$argument};
+  -moz-#{$name}: -moz-#{$argument};
+  -o-#{$name}: -o-#{$argument};
 }
 .resume-timeline-block-date-arrow {
 	margin-bottom: 2px;
@@ -29,6 +36,13 @@ $yellow-highlight: #ffc559;
 }
 .resume-experience-row {
 	margin-bottom:30px;
+	@include vendor-prefix(transform-origin, center center);
+	&.off-screen-top{
+		@include vendor-prefix(transform, translateY(-200px));
+	}
+	&.off-screen-bottom{
+		@include vendor-prefix(transform, translateY(200px));
+	}
 }
 .resume-experience-company-logo-wrapper {
 	position: relative;
@@ -195,29 +209,13 @@ body {
 }
 
 .come-in {
-	@include vendor-prefix(transform, translateY(200px));
-	@include vendor-prefix(animation, come-in 1s ease forwards);
+	@include vendor-prefix(transform, translateY(0));
+	@include vendor-prefix-prefix(transition, transform 0.8s ease-out);
 }
 .already-visible {
 	@include vendor-prefix(transform, translateY(0));
-	@include vendor-prefix(animation, none);
+	@include vendor-prefix(transition, none);
 }
-@keyframes come-in {
-  to { @include vendor-prefix(transform, translateY(0)); }
-}
-@-webkit-keyframes come-in {
-  to { @include vendor-prefix(transform, translateY(0)); }
-}
-@-moz-keyframes come-in {
-  to { @include vendor-prefix(transform, translateY(0)); }
-}
-@-o-keyframes come-in {
-  to { @include vendor-prefix(transform, translateY(0)); }
-}
-@-ms-keyframes come-in {
-  to { @include vendor-prefix(transform, translateY(0)); }
-}
-
 
 @media (max-width: 767px) {
 	.resume-experience-timeline {
