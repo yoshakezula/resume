@@ -1,4 +1,9 @@
 $yellow-highlight: #ffc559;
+$link-color: rgb(95, 121, 56);
+
+a {
+	color: $link-color !important;
+}
 @mixin yellow-animation {
 	background-color: $yellow-highlight;
 	@include vendor-prefix(transition, background-color 0.5s);
