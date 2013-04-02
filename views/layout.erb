@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Kenny Chan \ About</title>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+    <!--<link rel="stylesheet" href="stylesheets/bootstrap.css">-->
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/resume.css">
+    <link href="img/favicon.png" rel="icon" type="image/ico" />
+    <link href="img/favicon.png" rel="shortcut icon" type="image/ico" />
+  </head>
+  <body style="padding:40px 0;">
+	<div class="container">
+		<%if @error then %>
+			<div class="alert alert-error"><%=@error%></div>
+		<% end %>
+      <div id="app">
+        <%= yield %>
+      </div>
+	</div>
+  </body>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+  <script src="javascripts/resume.js"></script>
+</html>

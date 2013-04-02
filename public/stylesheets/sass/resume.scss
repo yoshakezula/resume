@@ -1,0 +1,231 @@
+$yellow-highlight: #ffc559;
+@mixin yellow-animation {
+	background-color: $yellow-highlight;
+	@include vendor-prefix(transition, background-color 0.5s);
+}
+@mixin width-animation {
+	@include vendor-prefix(transition, width 0.5s);
+}
+@mixin vendor-prefix($name, $argument) {
+  #{$name}: $argument;
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+}
+.resume-timeline-block-date-arrow {
+	margin-bottom: 2px;
+}
+.resume-experience-header-row {
+	position: relative;
+}
+.resume-experience-header {
+	font-weight: bold;
+	font-size: 20px;
+	position: absolute;
+	left: -145px;
+	text-align: right;
+	width: 150px;
+}
+.resume-experience-row {
+	margin-bottom:30px;
+}
+.resume-experience-company-logo-wrapper {
+	position: relative;
+	height: 50px;
+	min-width: 400px;
+	margin-bottom: 5px;
+}
+.resume-experience-company-name {
+	font-size: 25px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.resume-experience-company-logo {
+	height: 50px;
+	background: url('../img/logo-sprites.png') no-repeat;
+	display: block;
+}
+
+.logo-arkad {
+	width: 186px;
+	background-position: -5px -5px;
+}
+.logo-insight {
+	width: 377px;
+	background-position: -5px -125px;
+}
+.logo-bcg {
+	width: 315px;
+	background-position: -5px -65px;
+}
+.logo-wharton {
+	width: 204px;
+	background-position: -146px -185px;
+}
+.logo-seas {
+	width: 131px;
+	background-position: -5px -185px;
+}
+.logo-mandt {
+	width: 69px;
+	background-position: -201px -5px;
+}
+.logo-wharton, .logo-seas, .logo-mandt {
+	float: left;
+	margin-right: 10px;
+}
+.resume-experience-role-wrapper {
+	font-weight: bold;
+}
+.resume-experience-role-text {
+	background-color: $yellow-highlight;
+}
+.resume-timeline-block-date {
+	font-weight: bold;
+	color: #aaa;
+	text-align: center;
+	line-height: 1.1;
+	margin-bottom: 15px;
+	&:hover {
+		color: #333;
+		@include vendor-prefix(transition, color 1s);
+	}
+}
+#resume-header-name, #resume-header-contact-info {
+	float: left;
+}
+#resume-header-name {
+	font-size: 40px;
+	margin-right: 10px;
+	font-weight: bold;
+	line-height: 1;
+}
+.resume-header-contact-section-info {
+	width: 0;
+	@include width-animation;
+	overflow: hidden;
+	margin-left: 5px;
+}
+#resume-experience-section, #resume-education-section, #resume-more-section {
+	margin-top:50px;
+	position: relative;
+}
+.resume-experience-timeline {
+	position: absolute;
+	height: 100%;
+	left:75px;
+	top:0;
+	border-left: 1px solid #999;
+	border-right: 1px solid #eee;
+	z-index: 1;
+}
+.resume-header-contact-section-icon {
+	margin-top: 3px;
+}
+.resume-header-contact-section {
+	margin-top:5px;
+	margin-left: 5px;
+	padding:5px;
+	cursor: pointer;
+	&:hover {
+		.resume-header-contact-section-info {
+			width: 170px;
+			@include width-animation;
+		}
+	}
+}
+.resume-header-contact-section, .resume-header-contact-section-icon, .resume-header-contact-section-info {
+	float: left;
+}
+
+body {
+	background: #eeeeee url('../img/shattered.png');
+}
+
+.link-subtle {
+	color: #5f7938;
+	cursor: pointer;
+	font-size: 12px;
+}
+.clear {
+	clear: both;
+	height: 0;
+	line-height: 0;
+	font-size: 0;
+	padding: 0;
+	margin: 0;
+	display: block;
+}
+
+.yellow-hover:hover {
+ 	@include yellow-animation;
+}
+.yellow-flash {
+	@include yellow-animation;
+}
+
+.sprite {
+    background: url('../img/social-icons.png') no-repeat;
+    display: block;
+}
+
+.sprite-facebook {
+    width: 14px;
+    height: 14px;
+    background-position: -5px -5px;
+}
+
+.sprite-github {
+    width: 14px;
+    height: 14px;
+    background-position: -29px -5px;
+}
+
+.sprite-linkedin {
+    width: 14px;
+    height: 14px;
+    background-position: -5px -29px;
+}
+
+.come-in {
+	@include vendor-prefix(transform, translateY(200px));
+	@include vendor-prefix(animation, come-in 1s ease forwards);
+}
+.already-visible {
+	@include vendor-prefix(transform, translateY(0));
+	@include vendor-prefix(animation, none);
+}
+@keyframes come-in {
+  to { @include vendor-prefix(transform, translateY(0)); }
+}
+@-webkit-keyframes come-in {
+  to { @include vendor-prefix(transform, translateY(0)); }
+}
+@-moz-keyframes come-in {
+  to { @include vendor-prefix(transform, translateY(0)); }
+}
+@-o-keyframes come-in {
+  to { @include vendor-prefix(transform, translateY(0)); }
+}
+@-ms-keyframes come-in {
+  to { @include vendor-prefix(transform, translateY(0)); }
+}
+
+
+@media (max-width: 767px) {
+	.resume-experience-timeline {
+		display: none;
+	}
+}
+@media (min-width: 1200px) {
+	.resume-experience-timeline {
+		left: 80px;
+	}
+}
+
+@media (max-width: 979px) and (min-width: 768px) {
+	.resume-experience-timeline {
+		left: 60px;
+	}
+}
