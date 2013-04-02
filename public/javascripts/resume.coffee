@@ -35,24 +35,26 @@ $.fn.offScreen = (distance) ->
 #Code for scrolling in rows
 #from http://codepen.io/PawelGIX/pen/kmhLl
 $ ->
-	win = $(window)
-	allRows = $ '.resume-experience-row, .resume-experience-header-row'
 
-	allRows.each (i, el) ->
-		el = $(el)
-		if !el.offScreen(200).bottom
-		#if el.visible(true)
-			el.addClass 'already-visible'
+	if !Modernizr.touch
+		win = $(window)
+		allRows = $ '.resume-experience-row, .resume-experience-header-row'
 
-	win.on 'scroll resize', (event) ->
 		allRows.each (i, el) ->
 			el = $(el)
-			if !el.offScreen(200).top && !el.offScreen(200).bottom
-				el.removeClass 'already-visible off-screen-top off-screen-bottom'
-				el.addClass 'come-in'
-			else
-				el.addClass (if el.offScreen(200).top then 'off-screen-top' else 'off-screen-bottom')
+			if !el.offScreen(200).bottom
 			#if el.visible(true)
-			#	el.addClass 'come-in'
+				el.addClass 'already-visible'
 
-	win.trigger 'scroll'
+		win.on 'scroll resize', (event) ->
+			allRows.each (i, el) ->
+				el = $(el)
+				if !el.offScreen(200).top && !el.offScreen(200).bottom
+					el.removeClass 'already-visible off-screen-top off-screen-bottom'
+					el.addClass 'come-in'
+				else
+					el.addClass (if el.offScreen(200).top then 'off-screen-top' else 'off-screen-bottom')
+				#if el.visible(true)
+				#	el.addClass 'come-in'
+
+		win.trigger 'scroll'

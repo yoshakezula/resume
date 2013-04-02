@@ -21,14 +21,15 @@ $yellow-highlight: #ffc559;
 	margin-bottom: 2px;
 }
 .resume-experience-header-row {
+	margin-bottom: 5px;
+}
+.resume-section-content {
 	position: relative;
-	height: 25px;
 }
 .resume-experience-header {
 	font-weight: bold;
 	font-size: 35px;
-	position: absolute;
-	left: 0;
+	line-height: 1;
 	color: #ccc;
 }
 .resume-experience-row {
@@ -127,7 +128,6 @@ $yellow-highlight: #ffc559;
 	position: absolute;
 	height: 100%;
 	left:70px;
-	top:25px;
 	border-left: 1px solid #aaa;
 	border-right: 1px solid #eee;
 	z-index: 1;
