@@ -35,6 +35,9 @@ $.fn.offScreen = (distance) ->
 #Code for scrolling in rows
 #from http://codepen.io/PawelGIX/pen/kmhLl
 $ ->
+	tooltips = $('[data-toggle="tooltip"]')
+	tooltips.each (i, el) ->
+		$(el).tooltip()
 
 	if !Modernizr.touch
 		win = $(window)
