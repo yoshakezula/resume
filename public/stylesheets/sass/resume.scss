@@ -38,7 +38,7 @@ a {
 	font-weight: bold;
 	font-size: 35px;
 	line-height: 1;
-	color: #ccc;
+	color: #bbb;
 }
 .resume-experience-row {
 	margin-bottom:30px;
@@ -126,9 +126,20 @@ a {
 	margin-right: 10px;
 	font-weight: bold;
 	line-height: 1;
+	color: #333 !important;
+	text-decoration: none;
+	&:visited {
+		color: #333 !important;
+	}
 }
-
-#resume-experience-section, #resume-education-section, #resume-more-section {
+.project-link {
+	background-color: $yellow-highlight;
+	font-weight: bold;
+}
+#home-resume-link {
+	margin-left: 50px;
+}
+.resume-experience-section {
 	margin-top:50px;
 	position: relative;
 }
